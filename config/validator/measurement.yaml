@@ -1,0 +1,23 @@
+App\Entity\Measurement:
+  properties:
+    celsius:
+      - NotBlank:
+          message: 'Temperature cannot be blank'
+      - Type:
+          type: numeric
+          message: 'Temperature must be a number'
+      - Range:
+          min: -50
+          max: 50
+          notInRangeMessage: 'Temperature must be between {{ min }} and {{ max }} degrees Celsius.'
+
+    date:
+      - NotBlank:
+          message: 'Date cannot be blank'
+      - Type:
+          type: \DateTime
+          message: 'Invalid date format.'
+
+    location:
+      - NotBlank:
+          message: 'Location cannot be blank'

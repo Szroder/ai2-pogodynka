@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create New Measurement{% endblock %}
+
+{% block body %}
+    <h1>Create New Measurement</h1>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+    <div class="mb-3">
+        {{ form_label(form.location) }}
+        {{ form_widget(form.location, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.location) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.celsius) }}
+        {{ form_widget(form.celsius, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.celsius) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.date) }}
+        {{ form_widget(form.date, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.date) }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_measurement_index') }}">back to list</a>
+{% endblock %}
