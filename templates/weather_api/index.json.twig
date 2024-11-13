@@ -1,0 +1,12 @@
+{
+    "city": "{{ city }}",
+    "country": "{{ country }}",
+    "measurements": [
+        {% for measurement in measurements %}
+        {
+            "date": "{{ measurement.getDate().format('Y-m-d') }}",
+            "celsius": {{ measurement.getCelsius()|number_format(2) }}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+}

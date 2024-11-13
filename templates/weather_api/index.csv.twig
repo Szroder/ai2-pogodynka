@@ -1,0 +1,4 @@
+city,country,date,celsius
+{% for measurement in measurements %}
+{{ city }},{{ country }},{{ measurement.getDate().format('Y-m-d') }},{{ measurement.getCelsius()|number_format(2) }}
+{% endfor %}

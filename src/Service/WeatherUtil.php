@@ -36,7 +36,6 @@ class WeatherUtil
             'country' => $countryCode,
             'city' => $city,
         ]);
-        // Sprawdź, czy lokalizacja istnieje
         if ($location === null) {
             return [];
         }
